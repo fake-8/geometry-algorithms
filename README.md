@@ -10,13 +10,13 @@ An efficient algorithm used to determine the points of a raster that form a clos
 * Logic: Uses a decision parameter Pk to choose the next pixel without floating-point division.
 * Decision Parameter:
     * #for dx>dy
-          initial parameter,P0=2*dy-dx
-          if Pk<0:Pk=Pk+2*dy
-          if Pk>=0:Pk=2*dy-2*dx+Pk
+          *initial parameter,P0=2*dy-dx
+          *if Pk<0:Pk=Pk+2*dy
+          *if Pk>=0:Pk=2*dy-2*dx+Pk
     * #for dx<dy
-       initial parameter,P0=2*dx-dy
-      if Pk<0:Pk=Pk+2*dx
-      if Pk>=0:Pk=2*dx-2*dy+Pk
+          *initial parameter,P0=2*dx-dy
+          *if Pk<0:Pk=Pk+2*dx
+          *if Pk>=0:Pk=2*dx-2*dy+Pk
 ### 2. Midpoint Circle Drawing Algorithm
 This algorithm calculates the coordinates for one octant ($45^\circ$) and uses 8-way symmetry to complete the circle, significantly reducing computational load.
 * Logic: Minimizes computation by avoiding trigonometric functions (sine,cosine,etc).
